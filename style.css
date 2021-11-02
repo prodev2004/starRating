@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+.container {
+    display: flex;
+    align-items: center;
+}
+
+/* ( STEP-1 ) => as default the span elements will have the opacity of 40% */
+.container span {
+    opacity: .4;
+    cursor: pointer;
+}
+
+/* ( STEP-2 ) => when we hover over the container, al the elements inside will change the opacity to 100% */
+.container:hover span {
+    opacity: 1;
+}
+
+/* ( STEP-3 ) => ( ~ ) this sign selects all the siblings after that element. In this case when we hover over one of the span elements, the others after that element will have the opacity of 40% */
+.container span:hover ~ span {
+    opacity: .4;
+}
+
+/* this is a cool trick, but if you're a beginner it might be complicated for you.
+SO if you need any explanation on that, comment down below. I'll try to help you */
+
+/* we'll add this class of active with JS to the span elements */
+.container span.active {
+    opacity: 1;
+}
